@@ -10,7 +10,7 @@ import com.imooc.pojo.IMoocJSONResult;
 import com.imooc.pojo.Resource;
 
 
-
+//push
 @RestController
 public class HelloController {
     
