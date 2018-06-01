@@ -3,7 +3,7 @@ package com.imooc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//9999-6666地方都是 的说法
+//测试pull000000
 @SpringBootApplication
 public class Imooc {
 
@@ -13,3 +13,4 @@ public class Imooc {
 	
 
 }
+
