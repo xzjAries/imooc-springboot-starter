@@ -3,7 +3,7 @@ package com.imooc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//测试pull000000
+//徐志杰
 @SpringBootApplication
 public class Imooc {
 
