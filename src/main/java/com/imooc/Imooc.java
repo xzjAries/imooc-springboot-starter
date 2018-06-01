@@ -3,7 +3,7 @@ package com.imooc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//测试git提交
+//测试git提交 大对方的
 @SpringBootApplication
 public class Imooc {
 
