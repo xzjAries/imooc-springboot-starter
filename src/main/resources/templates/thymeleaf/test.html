@@ -18,6 +18,7 @@
 	<br/>
 	用户生日：<input th:value="${#dates.format(user.birthday, 'yyyy-MM-dd')}"/>
 	<br/>
+	
 </div>
 
 <br/>
@@ -29,6 +30,9 @@
 	<br/>
 	用户生日：<input th:value="*{#dates.format(birthday, 'yyyy-MM-dd hh:mm:ss')}"/>
 	<br/>
+	<br>
+	判断用户年龄：<div th:if="*{age} == 181">十八岁的天空</div>
+	</br>
 </div>
 
 <br/>
