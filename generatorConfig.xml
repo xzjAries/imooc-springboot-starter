@@ -12,10 +12,10 @@
             <property name="mappers" value="com.imooc.utils.MyMapper"/>
         </plugin>
 
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/leecx"
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/leecx?useSSL=false&serverTimezone=UTC"
                         userId="root"
-                        password="root">
+                        password="xuzhijie0215">
         </jdbcConnection>
 
         <!-- 对于生成的pojo所在包 -->
@@ -29,7 +29,7 @@
                              type="XMLMAPPER"/>
 
 
-		<table tableName="sys_user"></table>
+		<table tableName="bgm"></table>
 		 
     </context>
 </generatorConfiguration>
