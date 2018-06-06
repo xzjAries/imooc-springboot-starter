@@ -9,7 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.imooc.pojo.User;
+import com.imooc.pojo.TestSysUser;
 
 @Controller
 @RequestMapping("th")
@@ -29,7 +29,7 @@ public class ThymeleafController {
 	@RequestMapping("test")
     public String test(ModelMap map) {
 		
-		User u = new User();
+		TestSysUser u = new TestSysUser();
 		u.setName("superadmin");
 		u.setAge(18);
 		u.setPassword("123465");
@@ -38,19 +38,19 @@ public class ThymeleafController {
 		
 		map.addAttribute("user", u);
 		
-		User u1 = new User();
+		TestSysUser u1 = new TestSysUser();
 		u1.setAge(19);
 		u1.setName("imooc");
 		u1.setPassword("123456");
 		u1.setBirthday(new Date());
 		
-		User u2 = new User();
+		TestSysUser u2 = new TestSysUser();
 		u2.setAge(17);
 		u2.setName("LeeCX");
 		u2.setPassword("123456");
 		u2.setBirthday(new Date());
 		
-		List<User> userList = new ArrayList<>();
+		List<TestSysUser> userList = new ArrayList<>();
 		userList.add(u);
 		userList.add(u1);
 		userList.add(u2);
@@ -61,7 +61,7 @@ public class ThymeleafController {
     }
 	
 	@PostMapping("postform")
-    public String postform(User u) {
+    public String postform(TestSysUser u) {
 		
 		System.out.println("姓名：" + u.getName());
 		System.out.println("年龄：" + u.getAge());
@@ -70,7 +70,7 @@ public class ThymeleafController {
     }
 	
 	@RequestMapping("showerror")
-    public String showerror(User u) {
+    public String showerror(TestSysUser u) {
 		
 		int a = 1 / 0;
 		

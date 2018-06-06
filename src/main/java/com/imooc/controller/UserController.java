@@ -1,16 +1,19 @@
-package com.imooc.pojo;
+package com.imooc.controller;
 
 import java.util.Date;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.imooc.pojo.IMoocJSONResult;
+import com.imooc.pojo.TestSysUser;
+
 @RestController
 public class UserController {
     
 	@RequestMapping("/getUserInfo")
-	public User getUserInfo() {
-		User user = new User();
+	public TestSysUser getUserInfo() {
+		TestSysUser user = new TestSysUser();
 		user.setAge(18);
 		user.setBirthday(new Date());
 		user.setName("wangjiayun");
@@ -21,7 +24,7 @@ public class UserController {
 	
 	@RequestMapping("/getIMoocUserJson")
 	public IMoocJSONResult getIMoocUserJson() {
-		User user = new User();
+		TestSysUser user = new TestSysUser();
 		user.setAge(18);
 		user.setBirthday(new Date());
 		user.setName("wangjiayun1111");

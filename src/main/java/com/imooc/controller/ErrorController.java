@@ -9,6 +9,7 @@ import com.imooc.pojo.IMoocJSONResult;
 @Controller
 @RequestMapping("err")
 public class ErrorController {
+	
 	@RequestMapping("/errorOK")
 	public String erro() {
 		int i = 0 / 1;
