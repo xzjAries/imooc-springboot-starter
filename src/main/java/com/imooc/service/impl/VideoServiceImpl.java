@@ -8,6 +8,7 @@ import org.thymeleaf.util.StringUtils;
 
 import com.github.pagehelper.PageHelper;
 import com.imooc.mapper.VideosMapper;
+import com.imooc.mapper.VideosMapperCustom;
 import com.imooc.pojo.Videos;
 import com.imooc.service.VideoService;
 
@@ -18,7 +19,10 @@ public class VideoServiceImpl implements VideoService{
     
 	@Autowired
 	private VideosMapper videosMapper;
-
+    
+	@Autowired
+	private VideosMapperCustom videosMapperCustom;
+	
 	@Override
 	public void saveVideo(Videos videos) throws Exception {
 		videosMapper.insert(videos);
@@ -58,6 +62,13 @@ public class VideoServiceImpl implements VideoService{
 		example.orderBy("createTime").desc();
 		List<Videos> videosList = videosMapper.selectByExample(example);
 		return videosList;
+	}
+
+	@Override
+	public Videos queryUserByIdCustom(String userId) {
+      //  List<Videos> videosList = videosMapperCustom.equals(obj);
+	 videosMapperCustom.
+		return null;
 	}
 
 

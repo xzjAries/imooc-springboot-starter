@@ -56,11 +56,15 @@ public class MyBatisCRUDController {
 	}
 	
 	@RequestMapping("/queryUserListPaged")
-	public IMoocJSONResult queryUserListPaged(Integer pageIndex) {
+	public IMoocJSONResult queryUserListPaged(Integer pageIndex,Integer pageSize) {
 		if(pageIndex == null) {
 			pageIndex = 1;
 		}
-		int pageSize = 10;
+        
+		if(pageSize==null) {
+			pageSize = 10;
+		}
+		
 		Videos videos = new Videos();
 		//videos.setVideoDesc("徐志杰0215");
 		List<Videos> videosList = videoService.queryvideoListPaged(videos, pageIndex, pageSize);

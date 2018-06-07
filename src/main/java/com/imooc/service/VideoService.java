@@ -14,4 +14,5 @@ public interface VideoService {
   public Videos queryVideoById(String id);
   public List<Videos> queryVideoList(Videos videos);
   public List<Videos> queryvideoListPaged(Videos videos,Integer pageIndex,Integer pageSize);
+  public Videos queryUserByIdCustom(String userId);
 }
