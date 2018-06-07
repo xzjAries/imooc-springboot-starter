@@ -4,10 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.StringUtils;
 
+import com.github.pagehelper.PageHelper;
 import com.imooc.mapper.VideosMapper;
 import com.imooc.pojo.Videos;
 import com.imooc.service.VideoService;
+
+import tk.mybatis.mapper.entity.Example;
 
 @Service
 public class VideoServiceImpl implements VideoService{
@@ -39,6 +43,21 @@ public class VideoServiceImpl implements VideoService{
 	@Override
 	public List<Videos> queryVideoList(Videos videos) {
 		return videosMapper.select(videos);
+	}
+
+	@Override
+	public List<Videos> queryvideoListPaged(Videos videos, Integer pageIndex, Integer pageSize) {
+		//开始分页
+		PageHelper.startPage(pageIndex, pageSize);
+		
+		Example example = new Example(Videos.class);
+		Example.Criteria criteria = example.createCriteria();
+		if(!StringUtils.isEmptyOrWhitespace(videos.getVideoDesc())) {
+			criteria.andLike("videoDesc", "%"+videos.getVideoDesc()+"%");
+		}
+		example.orderBy("createTime").desc();
+		List<Videos> videosList = videosMapper.selectByExample(example);
+		return videosList;
 	}
 
 

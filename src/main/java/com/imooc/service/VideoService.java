@@ -13,5 +13,5 @@ public interface VideoService {
   public void updateVideo(Videos videos);
   public Videos queryVideoById(String id);
   public List<Videos> queryVideoList(Videos videos);
-  
+  public List<Videos> queryvideoListPaged(Videos videos,Integer pageIndex,Integer pageSize);
 }

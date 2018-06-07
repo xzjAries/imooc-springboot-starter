@@ -5,10 +5,10 @@ import javax.persistence.*;
 
 public class Videos {
     /**
-     * 全局唯一id
+     * 自动增加
      */
     @Id
-    private String id;
+    private Integer id;
 
     /**
      * 创建视频的用户id
@@ -73,20 +73,20 @@ public class Videos {
     private Date createTime;
 
     /**
-     * 获取全局唯一id
+     * 获取自动增加
      *
-     * @return id - 全局唯一id
+     * @return id - 自动增加
      */
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
-     * 设置全局唯一id
+     * 设置自动增加
      *
-     * @param id 全局唯一id
+     * @param id 自动增加
      */
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

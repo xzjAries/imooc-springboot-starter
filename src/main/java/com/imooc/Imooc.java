@@ -12,7 +12,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 //扫描 mybatis mapper 包路径
 @MapperScan(basePackages = "com.imooc.mapper")
 @ComponentScan(basePackages= {"com.imooc","org.n3r.idworker"})
-public class Imooc {
+public class Imooc { 
 
 	public static void main(String[] args) {
 		SpringApplication.run(Imooc.class, args);
