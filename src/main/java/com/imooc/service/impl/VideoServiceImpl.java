@@ -67,7 +67,7 @@ public class VideoServiceImpl implements VideoService{
 	@Override
 	public Videos queryUserByIdCustom(String userId) {
       //  List<Videos> videosList = videosMapperCustom.equals(obj);
-	 videosMapperCustom.
+	 //videosMapperCustom.
 		return null;
 	}
 
