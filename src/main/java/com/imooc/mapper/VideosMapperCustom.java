@@ -1,7 +1,12 @@
 package com.imooc.mapper;
 
-import com.imooc.pojo.Videos;
-import com.imooc.utils.MyMapper;
+import java.util.List;
 
-public interface VideosMapperCustom extends MyMapper<Videos> {
+import org.apache.ibatis.annotations.Param;
+
+import com.imooc.pojo.Videos;
+
+public interface VideosMapperCustom{
+	List<Videos> queryVideosSimplyInfoById(@Param("userId")String userId,@Param("audioId")String audioId);
+  //List<Videos> queryVideosSimplyInfoById(String userId,String audioId);
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.imooc.mapper.VideosMapperCustom;
 import com.imooc.pojo.IMoocJSONResult;
 import com.imooc.pojo.Videos;
 import com.imooc.service.VideoService;
@@ -70,6 +71,11 @@ public class MyBatisCRUDController {
 		List<Videos> videosList = videoService.queryvideoListPaged(videos, pageIndex, pageSize);
 		
 		return IMoocJSONResult.ok(videosList);
+	}
+	
+	@RequestMapping("/queryVideoByIdCustom")
+	private IMoocJSONResult queryUserByIdCustom(String userId,String audioId) {
+		return IMoocJSONResult.ok(videoService.queryUserByIdCustom(userId,audioId));
 	}
 	
 

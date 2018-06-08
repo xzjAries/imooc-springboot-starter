@@ -6,10 +6,13 @@
 	<select id="queryVideosSimplyInfoById" resultType="com.imooc.pojo.Videos" 
 										 parameterType="java.lang.String" >
 	    select 
-	    	*
+	        user_id,
+	        video_desc,
+	        status
 	    from 
 	    	videos
 	    where 
-	    	id = #{id,jdbcType=VARCHAR}
+	    	user_id = #{userId,jdbcType=VARCHAR} AND
+	    	audio_id=#{audioId}
 	</select>
 </mapper>

@@ -65,9 +65,11 @@ public class VideoServiceImpl implements VideoService{
 	}
 
 	@Override
-	public Videos queryUserByIdCustom(String userId) {
-      //  List<Videos> videosList = videosMapperCustom.equals(obj);
-	 //videosMapperCustom.
+	public Videos queryUserByIdCustom(String userId, String audioId) {
+		List<Videos> videosList = videosMapperCustom.queryVideosSimplyInfoById(userId,audioId);
+	     if(videosList!=null && !videosList.isEmpty()) {
+	    	 return (Videos)videosList.get(0);
+	     }
 		return null;
 	}
 
