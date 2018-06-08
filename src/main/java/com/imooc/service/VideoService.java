@@ -9,6 +9,7 @@ import com.imooc.pojo.Videos;
 public interface VideoService {
 	
   public void saveVideo(Videos videos) throws Exception;
+  public void saveVideoTransactional(Videos videos) throws Exception;
   public void deleteVideo(Videos videos);
   public void updateVideo(Videos videos);
   public Videos queryVideoById(String id);

@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -76,6 +78,25 @@ public class MyBatisCRUDController {
 	@RequestMapping("/queryVideoByIdCustom")
 	private IMoocJSONResult queryUserByIdCustom(String userId,String audioId) {
 		return IMoocJSONResult.ok(videoService.queryUserByIdCustom(userId,audioId));
+	}
+	
+	@RequestMapping("/saveVideoTranscation")
+	private IMoocJSONResult saveVideoTranscation() throws Exception{
+		String id = sid.nextShort();
+		Videos videos = new Videos();
+		videos.setAudioId("10000");
+		videos.setCoverPath("");
+		videos.setCreateTime(new Date());
+		videos.setLikeCounts(212);
+		videos.setStatus(1);
+		videos.setVideoDesc("炒币大法，耐心持有");
+		videos.setVideoHeight(11);
+		videos.setVideoPath("http://www.baidu");
+		videos.setVideoSeconds(1000.0f);
+		videos.setVideoWidth(808);
+		videos.setUserId(id);
+		videoService.saveVideoTransactional(videos);
+		return IMoocJSONResult.ok("保存成功~~");
 	}
 	
 

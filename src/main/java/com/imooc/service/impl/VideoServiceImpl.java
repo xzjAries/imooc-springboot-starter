@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.thymeleaf.util.StringUtils;
 
 import com.github.pagehelper.PageHelper;
@@ -24,32 +26,38 @@ public class VideoServiceImpl implements VideoService{
 	private VideosMapperCustom videosMapperCustom;
 	
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void saveVideo(Videos videos) throws Exception {
 		videosMapper.insert(videos);
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void deleteVideo(Videos videos) {
 		videosMapper.delete(videos);
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void updateVideo(Videos videos) {
 		videosMapper.updateByPrimaryKeySelective(videos);
 		
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.SUPPORTS)
 	public Videos queryVideoById(String id) {
 		return videosMapper.selectByPrimaryKey(id);
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.SUPPORTS)
 	public List<Videos> queryVideoList(Videos videos) {
 		return videosMapper.select(videos);
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.SUPPORTS)
 	public List<Videos> queryvideoListPaged(Videos videos, Integer pageIndex, Integer pageSize) {
 		//开始分页
 		PageHelper.startPage(pageIndex, pageSize);
@@ -73,6 +81,16 @@ public class VideoServiceImpl implements VideoService{
 		return null;
 	}
 
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void saveVideoTransactional(Videos videos) throws Exception {
+		videosMapper.insert(videos);
+		int i=1/0;
+		
+		videos.setStatus(0);
+		videosMapper.updateByPrimaryKeySelective(videos);
+	}
 
+   
   
 }
