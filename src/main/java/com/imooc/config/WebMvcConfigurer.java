@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.imooc.controller.interceptor.OneInterceptor;
 
 @SuppressWarnings("deprecation")
-@Configuration
+@Configuration 
 public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 
 	@Override
