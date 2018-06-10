@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import tk.mybatis.spring.annotation.MapperScan;
 
-//徐志杰--------
+//徐志杰-------- 000----
 @SpringBootApplication
 //扫描 mybatis mapper 包路径
 @MapperScan(basePackages = "com.imooc.mapper")
