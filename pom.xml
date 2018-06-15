@@ -109,6 +109,8 @@
 			<optional>true</optional>
 		</dependency>
 		<!-- 引入 mybatis over -->
+		
+		
 		<!-- 引入 redis依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

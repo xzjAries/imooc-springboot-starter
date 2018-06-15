@@ -5,12 +5,9 @@ import java.util.List;
 
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.imooc.mapper.VideosMapperCustom;
 import com.imooc.pojo.IMoocJSONResult;
 import com.imooc.pojo.Videos;
 import com.imooc.service.VideoService;
@@ -22,6 +19,7 @@ public class MyBatisCRUDController {
 	@Autowired
 	private VideoService videoService;
 
+	
 	@Autowired
 	private Sid sid;
 
@@ -78,7 +76,7 @@ public class MyBatisCRUDController {
 	@RequestMapping("/queryVideoByIdCustom")
 	private IMoocJSONResult queryUserByIdCustom(String userId,String audioId) {
 		return IMoocJSONResult.ok(videoService.queryUserByIdCustom(userId,audioId));
-	}
+	} 
 	
 	@RequestMapping("/saveVideoTranscation")
 	private IMoocJSONResult saveVideoTranscation() throws Exception{
@@ -98,6 +96,7 @@ public class MyBatisCRUDController {
 		videoService.saveVideoTransactional(videos);
 		return IMoocJSONResult.ok("保存成功~~");
 	}
+	
 	
 
 }
